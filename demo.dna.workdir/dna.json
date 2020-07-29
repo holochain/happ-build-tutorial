@@ -1,0 +1,13 @@
+{
+  "name": "test-dna",
+  "uuid": "",
+  "properties": null,
+  "zomes": {
+    "foo": {
+      "wasm_path": "../target/wasm32-unknown-unknown/release/foo.wasm"
+    },
+    "whoami": {
+      "wasm_path": "../target/wasm32-unknown-unknown/release/whoami.wasm"
+    }
+  }
+}
