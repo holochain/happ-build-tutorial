@@ -13,11 +13,21 @@ At the time of writing, I could not get the remote option to work, so the exampl
 
 ## Steps
 
-### Write your Zomes
+### 0. Build `holochain` and `dna-util`
+
+You'll need two binaries to develop DNAs: the actual Holochain conductor binary, and the dna-util library which assists with assembling Wasms into a DNA file.
+
+- Clone the repo: `git clone https://github.com/Holo-Host/holochain && cd ./holochain`
+- Install conductor binary: `cargo install --path crates/holochain`
+- Install dna-util binary: `cargo install --path crates/dna-util`
+
+You should now have `holochain` and `dna-util` on your PATH.
+
+### 1. Write your Zomes
 
 Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/foo](zomes/foo) for examples.
 
-### Build your Zomes into Wasm
+### 2. Build your Zomes into Wasm
 
 When you want to (re)build your zomes into Wasm, simply run
 
@@ -27,7 +37,7 @@ cargo build --release --target wasm32-unknown-unknown
 
 and they will be available in `target/wasm32-unknown-unknown/release/`
 
-### Assemble your Wasms into a DNA file
+### 3. Assemble your Wasms into a DNA file
 
 *Note: Soon, this process will be easier in that it will not require a `.dna.workdir`*
 
@@ -42,7 +52,7 @@ dna-util -c demo.dna.workdir
 
 This will produce a `demo.dna.gz` file as a sibling of the `demo.dna.workdir` directory.
 
-### Use the Conductor's admin interface to install your DNA
+### 4. Use the Conductor's admin interface to install your DNA
 
 If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/Holo-Host/tryorama-rsm) (also a private repo) and follow the instructions there.
 
