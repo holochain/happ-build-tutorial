@@ -19,7 +19,7 @@ You'll need two binaries to develop DNAs: the actual Holochain conductor binary,
 
 - Clone the repo: `git clone https://github.com/Holo-Host/holochain && cd ./holochain`
 - Install conductor binary: `cargo install --path crates/holochain`
-- Install dna-util binary: `cargo install --path crates/dna-util`
+- Install dna-util binary: `cargo install --path crates/dna_util`
 
 You should now have `holochain` and `dna-util` on your PATH.
 
