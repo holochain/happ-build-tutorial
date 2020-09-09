@@ -1,7 +1,8 @@
 # How to build Holochain DNA
 
 [![Project](https://img.shields.io/badge/project-holochain-blue.svg?style=flat-square)](http://holochain.org/)
-[![Chat](https://img.shields.io/badge/chat-forum%2eholochain%2eorg-blue.svg?style=flat-square)](https://forum.holochain.org)
+[![Forum](https://img.shields.io/badge/chat-forum%2eholochain%2enet-blue.svg?style=flat-square)](https://forum.holochain.org)
+[![Chat](https://img.shields.io/badge/chat-chat%2eholochain%2enet-blue.svg?style=flat-square)](https://chat.holochain.org)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 *as of 2020-09-15*
@@ -56,6 +57,11 @@ If you are running Holochain using your own setup, you'll have to have a deeper 
 - make sure `holochain` is running with a configuration that includes an admin interface websocket port
 - send a properly encoded [`InstallApp`](https://github.com/holochain/holochain/blob/66ca899d23842cadebc214d591475987f4af4f43/crates/holochain/src/conductor/api/api_external/admin_interface.rs#L240) command over the websocket
 - be sure to `ActivateApp` and `AttachAppInterface` as well.
+
+## Contribute
+Holochain is an open source project.  We welcome all sorts of participation and are actively working on increasing surface area to accept it.  Please see our [contributing guidelines](/CONTRIBUTING.md) for our general practices and protocols on participating in the community, as well as specific expectations around things like code formatting, testing practices, continuous integration, etc.
+
+* Connect with us on our [forum](https://forum.holochain.org)
 
 # License
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
