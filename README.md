@@ -51,7 +51,7 @@ This will produce a `demo.dna.gz` file as a sibling of the `demo.dna.workdir` di
 
 ### 4. Use the Conductor's admin interface to install your DNA
 
-If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/holohcain/tryorama-rsm) and follow the instructions there.
+If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/holochain/tryorama-rsm) and follow the instructions there.
 
 If you are running Holochain using your own setup, you'll have to have a deeper understanding of Holochain than is in scope for this tutorial. Roughly speaking, you'll need to:
 
