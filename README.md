@@ -14,6 +14,7 @@
 You'll need two binaries to develop DNAs: the actual Holochain conductor binary, and the dna-util library which assists with assembling Wasms into a DNA file.
 
 - Clone the repo: `git clone https://github.com/holochain/holochain && cd ./holochain`
+- Ensure correct version of rust tool-chain via nix: `nix-shell`
 - Install conductor binary: `cargo install --path crates/holochain`
 - Install dna-util binary: `cargo install --path crates/dna_util`
 
@@ -28,7 +29,7 @@ Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/foo](zome
 When you want to (re)build your zomes into Wasm, simply run
 
 ```bash
-cargo build --release --target wasm32-unknown-unknown
+CARGO_TARGET=target cargo build --release --target wasm32-unknown-unknown
 ```
 
 and they will be available in `target/wasm32-unknown-unknown/release/`
@@ -50,7 +51,7 @@ This will produce a `demo.dna.gz` file as a sibling of the `demo.dna.workdir` di
 
 ### 4. Use the Conductor's admin interface to install your DNA
 
-If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/holohcain/tryorama-rsm) (also a private repo) and follow the instructions there.
+If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/holohcain/tryorama-rsm) and follow the instructions there.
 
 If you are running Holochain using your own setup, you'll have to have a deeper understanding of Holochain than is in scope for this tutorial. Roughly speaking, you'll need to:
 
@@ -66,7 +67,7 @@ Holochain is an open source project.  We welcome all sorts of participation and 
 # License
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-Copyright (C) 2019, Holochain Foundation
+Copyright (C) 2019-2020, Holochain Foundation
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
