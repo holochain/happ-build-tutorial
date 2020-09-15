@@ -14,7 +14,7 @@
 You'll need two binaries to develop DNAs: the actual Holochain conductor binary, and the dna-util library which assists with assembling Wasms into a DNA file.
 
 - Clone the repo: `git clone https://github.com/holochain/holochain && cd ./holochain`
-- Ensure correct version of rust tool-chain via nix: `nix-shell`
+- Ensure correct version of rust tool-chain via nix: `nix-shell` (this can be done by entering `nix-shell` at the root of the holochain directory.)
 - Install conductor binary: `cargo install --path crates/holochain`
 - Install dna-util binary: `cargo install --path crates/dna_util`
 
