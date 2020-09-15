@@ -1,15 +1,11 @@
 # How to build Holochain DNA
 
-*as of 29-07-2020*
+[![Project](https://img.shields.io/badge/project-holochain-blue.svg?style=flat-square)](http://holochain.org/)
+[![Forum](https://img.shields.io/badge/chat-forum%2eholochain%2enet-blue.svg?style=flat-square)](https://forum.holochain.org)
+[![Chat](https://img.shields.io/badge/chat-chat%2eholochain%2enet-blue.svg?style=flat-square)](https://chat.holochain.org)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-## Important note about dependencies
-
-Effective zome development requires a few cargo dependencies which are not yet published to crates.io and exist only in the private [holochain-rsm GitHub repo](https://github.com/Holo-Host/holochain). Since the repo is private, we cannot simply point our Cargo.toml file directly to it without some configuration. There are two options:
-
-1. Clone the Holochain repo, and use local paths in your Cargo.toml(s) to refer to your local checkout of Holochain, or
-2. If you use SSH keys for GitHub, configure your ssh-agent so that Cargo can be aware of your key, per https://doc.rust-lang.org/cargo/appendix/git-authentication.html. Then you can use remote git deps in your zomes' Cargo.toml(s).
-
-At the time of writing, I could not get the remote option to work, so the example zomes here use local paths (option 1).
+*as of 2020-09-15*
 
 ## Steps
 
@@ -17,7 +13,8 @@ At the time of writing, I could not get the remote option to work, so the exampl
 
 You'll need two binaries to develop DNAs: the actual Holochain conductor binary, and the dna-util library which assists with assembling Wasms into a DNA file.
 
-- Clone the repo: `git clone https://github.com/Holo-Host/holochain && cd ./holochain`
+- Clone the repo: `git clone https://github.com/holochain/holochain && cd ./holochain`
+- Ensure correct version of rust tool-chain via nix: `nix-shell` (this can be done by entering `nix-shell` at the root of the holochain directory.)
 - Install conductor binary: `cargo install --path crates/holochain`
 - Install dna-util binary: `cargo install --path crates/dna_util`
 
@@ -32,7 +29,7 @@ Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/foo](zome
 When you want to (re)build your zomes into Wasm, simply run
 
 ```bash
-cargo build --release --target wasm32-unknown-unknown
+CARGO_TARGET=target cargo build --release --target wasm32-unknown-unknown
 ```
 
 and they will be available in `target/wasm32-unknown-unknown/release/`
@@ -54,10 +51,32 @@ This will produce a `demo.dna.gz` file as a sibling of the `demo.dna.workdir` di
 
 ### 4. Use the Conductor's admin interface to install your DNA
 
-If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/Holo-Host/tryorama-rsm) (also a private repo) and follow the instructions there.
+If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/holochain/tryorama-rsm) and follow the instructions there.
 
 If you are running Holochain using your own setup, you'll have to have a deeper understanding of Holochain than is in scope for this tutorial. Roughly speaking, you'll need to:
 
 - make sure `holochain` is running with a configuration that includes an admin interface websocket port
-- send a properly encoded [`InstallApp`](https://github.com/Holo-Host/holochain/blob/66ca899d23842cadebc214d591475987f4af4f43/crates/holochain/src/conductor/api/api_external/admin_interface.rs#L240) command over the websocket
+- send a properly encoded [`InstallApp`](https://github.com/holochain/holochain/blob/66ca899d23842cadebc214d591475987f4af4f43/crates/holochain/src/conductor/api/api_external/admin_interface.rs#L240) command over the websocket
 - be sure to `ActivateApp` and `AttachAppInterface` as well.
+
+## Contribute
+Holochain is an open source project.  We welcome all sorts of participation and are actively working on increasing surface area to accept it.  Please see our [contributing guidelines](/CONTRIBUTING.md) for our general practices and protocols on participating in the community, as well as specific expectations around things like code formatting, testing practices, continuous integration, etc.
+
+* Connect with us on our [forum](https://forum.holochain.org)
+
+# License
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+Copyright (C) 2019-2020, Holochain Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

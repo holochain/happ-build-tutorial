@@ -11,7 +11,10 @@ crate-type = [ "cdylib", "rlib" ]
 [dependencies]
 holochain_serialized_bytes = "=0.0.40"
 holochain_wasmer_guest = "=0.0.36"
-holochain_zome_types = { version = "=0.0.1", path = "../../../chain/crates/zome_types" }
-hdk3 = { path = "../../../chain/crates/hdk" }
+holochain_zome_types = { version = "=0.0.1", path = "../../../MY_HOLOCHAIN_REPO/crates/zome_types" }
+hdk3 = { path = "../../../MY_HOLOCHAIN_REPO/crates/hdk" }
 serde = "=1.0.104"
-test_wasm_common = { version = "=0.0.1", path = "../../../chain/crates/test_utils/wasm_common" }
+test_wasm_common = { version = "=0.0.1", path = "../../../MY_HOLOCHAIN_REPO/crates/test_utils/wasm_common" }
+
+
+# NB: change the local "../../../MY_HOLOCHAIN_REPO/" paths above to reflect the location of a holochain clone on your own machine
