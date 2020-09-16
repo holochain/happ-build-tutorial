@@ -59,6 +59,8 @@ If you are running Holochain using your own setup, you'll have to have a deeper 
 - send a properly encoded [`InstallApp`](https://github.com/holochain/holochain/blob/66ca899d23842cadebc214d591475987f4af4f43/crates/holochain/src/conductor/api/api_external/admin_interface.rs#L240) command over the websocket
 - be sure to `ActivateApp` and `AttachAppInterface` as well.
 
+If you just want to run an instance of `holochain` with your DNA running for development purposes, you can use [`holochain-run-dna`](https://www.npmjs.com/package/@holochain-open-dev/holochain-run-dna).
+
 ## Contribute
 Holochain is an open source project.  We welcome all sorts of participation and are actively working on increasing surface area to accept it.  Please see our [contributing guidelines](/CONTRIBUTING.md) for our general practices and protocols on participating in the community, as well as specific expectations around things like code formatting, testing practices, continuous integration, etc.
 
