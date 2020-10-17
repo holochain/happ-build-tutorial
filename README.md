@@ -28,7 +28,7 @@ Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/foo](zome
 When you want to (re)build your zomes into Wasm, simply run
 
 ```bash
-CARGO_TARGET=target cargo build --release --target wasm32-unknown-unknown
+CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown
 ```
 
 and they will be available in `target/wasm32-unknown-unknown/release/`
