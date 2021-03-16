@@ -65,11 +65,11 @@ hc app pack workdir/happ
 
 This will produce a `demo-happ.happ` file as a sibling of the `workdir/happ` directory.
 
-### 5. Use the Conductor's admin interface to install your DNA
+### 5. Running and testing your happ
 
 If you are using Tryorama to run tests against your DNA, you can jump over to the [tryorama README](https://github.com/holochain/tryorama) and follow the instructions there.
 
-If you want to run the happ bundle directly, run this:
+If you want to run the happ bundle directly, run this replacing `workdir/happ` for the directory in which you have you `*.happ` file:
 
 ```bash
 hc sandbox generate workdir/happ --run
