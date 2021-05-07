@@ -142,7 +142,7 @@ Here you have useful documentation for holochain core utilities:
 Here you can find useful resources:
 
 - [Holochain Gym](https://holochain-gym.github.io/): a step-by-step collection of exercises to get you started in holochain development.
-- [Acorn](https://github.com/h-be/acorn-hc): the most complete holochain application up-to-date, full-stack.
+- [Acorn](https://github.com/h-be/acorn): the most complete holochain application up-to-date, full-stack.
 - [Holochain Open Dev](https://github.com/holochain-open-dev): collection of small holochain modules.
 - [RSM playtime](https://www.youtube.com/watch?v=u6iUg1BVzsY&list=PLOuXrtFJO6zWNK41Wgv62v5ju5CP3FbOT): deep dive video series on holochain rsm.
 
