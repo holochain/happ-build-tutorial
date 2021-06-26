@@ -43,7 +43,7 @@ and they will be available in `target/wasm32-unknown-unknown/release/`
 
 - This will create a `dna.yaml` in it with the necessary initial configuration.
 
-2. Add your zomes to the `dna.yaml` file with references the `*.wasm` files you built in the previous step (see `workdir/dna/dna.yaml` for examples).
+2. Add your zomes to the `dna.yaml` file with references the `*.wasm` files you built in the previous step (see [workdir/dna/dna.yaml](workdir/dna/dna.yaml) for examples).
 3. Run the following command to package your Wasms into a DNA file per your `dna.yaml`:
 
 ```bash
@@ -60,7 +60,7 @@ _hApps_ (holochain apps) are bundled as aggregations of different DNAs.
 
 - This will create a `happ.yaml` in it with the necessary initial configuration.
 
-2. Add the DNA bundle created in the previous step to the new `happ.yaml` file (see `workdir/happ/happ.yaml` for an example).
+2. Add the DNA bundle created in the previous step to the new `happ.yaml` file (see [workdir/happ/happ.yaml](workdir/happ/happ.yaml) for an example).
 3. Run the following command to package your DNAs into a happ bundle per your `happ.yaml`:
 
 ```bash
