@@ -67,7 +67,7 @@ _hApps_ (holochain apps) are bundled as aggregations of different DNAs.
 hc app pack workdir/happ
 ```
 
-This will produce a `demo-happ.happ` file as a sibling of the `workdir/happ` directory.
+This will produce a `demo-happ.happ` file as a child file in the `workdir/happ` directory.
 
 ### 4. Testing
 
