@@ -99,7 +99,7 @@ FIXME: ignoring onLeave
 # ok
 ```
 
-You can look at `tests/src/index.ts` and have a look at the tests. You can also look at the [tryorama documentation](https://github.com/holochain/tryorama).
+You can look at [tests/src/index.ts](tests/src/index.ts) and have a look at the tests. You can also look at the [tryorama documentation](https://github.com/holochain/tryorama).
 
 ### 5. Running your happ
 
@@ -141,6 +141,7 @@ Here you have useful documentation for holochain core utilities:
 
 Here you can find useful resources:
 
+- [Help & How To Wiki](https://github.com/holochain-open-dev/wiki/wiki): community contributed how tos and explainers
 - [Holochain Gym](https://holochain-gym.github.io/): a step-by-step collection of exercises to get you started in holochain development.
 - [Acorn](https://github.com/h-be/acorn): the most complete holochain application up-to-date, full-stack.
 - [Holochain Open Dev](https://github.com/holochain-open-dev): collection of small holochain modules.
