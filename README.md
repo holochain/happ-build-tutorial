@@ -43,7 +43,7 @@ and they will be available in `target/wasm32-unknown-unknown/release/`
 
 - This will create a `dna.yaml` in it with the necessary initial configuration.
 
-2. Add your zomes to the `dna.yaml` file with references the `*.wasm` files you built in the previous step (see `workdir/dna/dna.yaml` for examples).
+2. Add your zomes to the `dna.yaml` file with references the `*.wasm` files you built in the previous step (see [workdir/dna/dna.yaml](workdir/dna/dna.yaml) for examples).
 3. Run the following command to package your Wasms into a DNA file per your `dna.yaml`:
 
 ```bash
@@ -60,14 +60,14 @@ _hApps_ (holochain apps) are bundled as aggregations of different DNAs.
 
 - This will create a `happ.yaml` in it with the necessary initial configuration.
 
-2. Add the DNA bundle created in the previous step to the new `happ.yaml` file (see `workdir/happ/happ.yaml` for an example).
+2. Add the DNA bundle created in the previous step to the new `happ.yaml` file (see [workdir/happ/happ.yaml](workdir/happ/happ.yaml) for an example).
 3. Run the following command to package your DNAs into a happ bundle per your `happ.yaml`:
 
 ```bash
 hc app pack workdir/happ
 ```
 
-This will produce a `demo-happ.happ` file as a sibling of the `workdir/happ` directory.
+This will produce a `demo-happ.happ` file as a child file in the `workdir/happ` directory.
 
 ### 4. Testing
 
@@ -99,7 +99,7 @@ FIXME: ignoring onLeave
 # ok
 ```
 
-You can look at `tests/src/index.ts` and have a look at the tests. You can also look at the [tryorama documentation](https://github.com/holochain/tryorama).
+You can look at [tests/src/index.ts](tests/src/index.ts) and have a look at the tests. You can also look at the [tryorama documentation](https://github.com/holochain/tryorama).
 
 ### 5. Running your happ
 
@@ -141,6 +141,7 @@ Here you have useful documentation for holochain core utilities:
 
 Here you can find useful resources:
 
+- [Help & How To Wiki](https://github.com/holochain-open-dev/wiki/wiki): community contributed how tos and explainers
 - [Holochain Gym](https://holochain-gym.github.io/): a step-by-step collection of exercises to get you started in holochain development.
 - [Acorn](https://github.com/h-be/acorn): the most complete holochain application up-to-date, full-stack.
 - [Holochain Open Dev](https://github.com/holochain-open-dev): collection of small holochain modules.
