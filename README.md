@@ -27,9 +27,9 @@ _as of 2021-06-17_
 
 Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/foo](zomes/foo) for examples.
 
-### 2. Build your Zomes into Wasm
+### 2. Build your Zomes into WebAssembly (WASM)
 
-When you want to (re)build your zomes into Wasm, simply run
+When you want to (re)build your zomes into WebAssembly (wasm), simply run
 
 ```bash
 CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown
@@ -37,7 +37,7 @@ CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown
 
 and they will be available in `target/wasm32-unknown-unknown/release/`
 
-### 3. Package your Wasms into a DNA file
+### 3. Package your "Wasms" into a DNA file
 
 1. Create a new dna workdir with `hc dna init <DNA_FOLDER>`.
 
