@@ -124,7 +124,7 @@ hc-sandbox: App port attached at 8888
 hc-sandbox: Connected successfully to a running holochain
 ```
 
-Now you'll have holochain waiting for a connection at port 8888. You can connect to it with a UI or any other process.
+Now you'll have holochain waiting for a connection at port 8888. You can connect to it with a [UI](https://github.com/holochain/holochain-conductor-api) or [any other process](https://github.com/holochain/conductor-client-rust).
 
 You can look at the [documentation of `hc sandbox`](https://github.com/holochain/holochain/tree/develop/crates/hc_sandbox) to learn more on how to manage sandboxes.
 
