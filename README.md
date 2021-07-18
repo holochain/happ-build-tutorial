@@ -126,7 +126,7 @@ hc-sandbox: App port attached at 8888
 hc-sandbox: Connected successfully to a running holochain
 ```
 
-Now you'll have holochain waiting with an [AppInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/app_interface.rs#L5-L130) for a connection at port 8888. You can connect to it with a [UI](https://github.com/holochain/holochain-conductor-api) or [any other process](https://github.com/holochain/conductor-client-rust). You also have holochain open with an [AdminInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/admin_interface.rs#L8-L386) on port (subject to vary) 45843 as mentioned in the logs.
+Now you'll have holochain waiting with an [AppInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/app_interface.rs#L5-L130) for a connection at port 8888. You can connect to it with a [UI](https://github.com/holochain/holochain-conductor-api) or [any other process](https://github.com/holochain/conductor-client-rust). You also have holochain waiting with an [AdminInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/admin_interface.rs#L8-L386) on port (subject to vary) 45843 as mentioned in the logs.
 
 You can look at the [documentation of `hc sandbox`](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/hc_sandbox/README.md) to learn more on how to manage sandboxes. For a quick helper: in case you shut down your running conductor, you can start it again using `hc sandbox run`.
 
