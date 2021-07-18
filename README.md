@@ -1,4 +1,4 @@
-# How to build Holochain DNA
+# The Basics of How to build a hApp (Holochain App)
 
 [![Project](https://img.shields.io/badge/project-holochain-blue.svg?style=flat-square)](http://holochain.org/)
 [![Forum](https://img.shields.io/badge/chat-forum%2eholochain%2enet-blue.svg?style=flat-square)](https://forum.holochain.org)
@@ -7,9 +7,11 @@
 
 _as of 2021-06-17_
 
+> Based on Holochain Revision: [363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7 May 21, 2021](https://github.com/holochain/holochain/commits/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7)
+
 ## Important documentation
 
-- [HC CLI docs](https://github.com/holochain/holochain/tree/develop/crates/hc)
+- [HC CLI docs](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/hc/README.md)
 - [HDK docs](https://docs.rs/hdk/0.0.100/hdk/)
 
 ## Steps
