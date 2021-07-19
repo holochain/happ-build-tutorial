@@ -29,7 +29,7 @@ orchestrator.registerScenario("sample test", async (s, t) => {
   const [[alice_common]] = await alice.installAgentsHapps(installation);
 
   let result = await alice_common.cells[0].call("numbers", "add_ten", { number: 10 });
-  t.equal(result, { other_number: 20 });
+  t.deepEqual(result, { other_number: 20 });
 });
 
 orchestrator.run();
