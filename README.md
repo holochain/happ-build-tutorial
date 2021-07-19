@@ -27,7 +27,7 @@ _This README last updated: 2021-07-18_
 
 ### 1. Write your Zomes
 
-Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/foo](zomes/foo) for examples.
+Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/numbers](zomes/numbers) for examples.
 
 ### 2. Build your Zomes into WebAssembly (WASM)
 

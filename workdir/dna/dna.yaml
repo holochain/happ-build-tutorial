@@ -4,7 +4,7 @@ name: demo-dna
 uuid: ~
 properties: ~
 zomes: 
-  - name: foo
-    bundled: ../../target/wasm32-unknown-unknown/release/foo.wasm
+  - name: numbers
+    bundled: ../../target/wasm32-unknown-unknown/release/numbers.wasm
   - name: whoami
     bundled: ../../target/wasm32-unknown-unknown/release/whoami.wasm
