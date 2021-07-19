@@ -1,15 +1,17 @@
-# How to build Holochain DNA
+# The Basics of How to build a hApp (Holochain App)
 
 [![Project](https://img.shields.io/badge/project-holochain-blue.svg?style=flat-square)](http://holochain.org/)
 [![Forum](https://img.shields.io/badge/chat-forum%2eholochain%2enet-blue.svg?style=flat-square)](https://forum.holochain.org)
 [![Chat](https://img.shields.io/badge/chat-chat%2eholochain%2enet-blue.svg?style=flat-square)](https://chat.holochain.org)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-_as of 2021-06-17_
+_This README last updated: 2021-07-18_
+
+> Based on Holochain Revision: [363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7 May 21, 2021](https://github.com/holochain/holochain/commits/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7)
 
 ## Important documentation
 
-- [HC CLI docs](https://github.com/holochain/holochain/tree/develop/crates/hc)
+- [HC CLI docs](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/hc/README.md)
 - [HDK docs](https://docs.rs/hdk/0.0.100/hdk/)
 
 ## Steps
@@ -124,11 +126,11 @@ hc-sandbox: App port attached at 8888
 hc-sandbox: Connected successfully to a running holochain
 ```
 
-Now you'll have holochain waiting for a connection at port 8888. You can connect to it with a [UI](https://github.com/holochain/holochain-conductor-api) or [any other process](https://github.com/holochain/conductor-client-rust).
+Now you'll have holochain waiting with an [AppInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/app_interface.rs#L5-L130) for a connection at port 8888. You can connect to it with a [UI](https://github.com/holochain/holochain-conductor-api) or [any other process](https://github.com/holochain/conductor-client-rust). You also have holochain waiting with an [AdminInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/admin_interface.rs#L8-L386) on port (subject to vary) 45843 as mentioned in the logs.
 
-You can look at the [documentation of `hc sandbox`](https://github.com/holochain/holochain/tree/develop/crates/hc_sandbox) to learn more on how to manage sandboxes.
+You can look at the [documentation of `hc sandbox`](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/hc_sandbox/README.md) to learn more on how to manage sandboxes. For a quick helper: in case you shut down your running conductor, you can start it again using `hc sandbox run`.
 
-> Note: notice that `hc sandbox` and its derivates are at a prototype stage and subject to change.
+> Note: `hc sandbox` and its derivates are at a prototype stage and subject to change.
 
 ## Next steps
 
