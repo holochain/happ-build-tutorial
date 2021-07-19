@@ -1,4 +1,4 @@
-# The Basics of How to build a hApp (Holochain App)
+# How to build a hApp (Holochain App): The Basics
 
 [![Project](https://img.shields.io/badge/project-holochain-blue.svg?style=flat-square)](http://holochain.org/)
 [![Forum](https://img.shields.io/badge/chat-forum%2eholochain%2enet-blue.svg?style=flat-square)](https://forum.holochain.org)
@@ -7,7 +7,13 @@
 
 _This README last updated: 2021-07-18_
 
-> Based on Holochain Revision: [363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7 May 21, 2021](https://github.com/holochain/holochain/commits/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7)
+> Holochain revision: [363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7 May 21, 2021](https://github.com/holochain/holochain/commits/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7)
+
+> HDK version: [0.0.100](https://docs.rs/hdk/0.0.100/hdk/)
+
+> This project has a complementary guide at the ["call your hApp tutorial"](https://github.com/holochain/happ-client-call-tutorial), and interacts with that code via a clean separation at the "network layer". This project is called by that project over a Websocket based network connection.
+
+Welcome to this project here to help you build and run your first hApp! It covers the very basics only. If you haven't previously read the article on ["Application Architecture" on the developer documentation](https://developer.holochain.org/concepts/2_application_architecture/) it could be helpful to do so now, or at any point during this tutorial.
 
 ## Important documentation
 
@@ -31,47 +37,43 @@ Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/numbers](
 
 ### 2. Build your Zomes into WebAssembly (WASM)
 
-When you want to (re)build your zomes into WebAssembly (wasm), simply run
+When you want to build your zomes into WebAssembly (wasm), simply run
 
 ```bash
 CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown
 ```
 
-and they will be available in `target/wasm32-unknown-unknown/release/`
+and they will be available in `target/wasm32-unknown-unknown/release/`.
+
+> You will have to rerun this any time you redo step 1 (edit your Zomes).
 
 ### 3. Package your "Wasms" into a DNA file
 
-1. Create a new dna workdir with `hc dna init <DNA_FOLDER>`.
-
-- This will create a `dna.yaml` in it with the necessary initial configuration.
-
-2. Add your zomes to the `dna.yaml` file with references the `*.wasm` files you built in the previous step (see [workdir/dna/dna.yaml](workdir/dna/dna.yaml) for examples).
-3. Run the following command to package your Wasms into a DNA file per your `dna.yaml`:
-
+   1. Create a new dna workdir with `hc dna init <DNA_FOLDER>`. This will create a `dna.yaml` in it with the necessary initial configuration.
+   2. Add your zomes to the `dna.yaml` file with references the `*.wasm` files you built in the previous step (see [workdir/dna/dna.yaml](workdir/dna/dna.yaml) for examples).
+   3. Run the following command to package your Wasms into a DNA file per your `dna.yaml`:
 ```bash
 hc dna pack workdir/dna
 ```
 
 This will produce a `demo.dna` file as a sibling of the `workdir/dna` directory.
+> You will have to rerun step 3.3 (hc dna pack) of this step any time you redo primary step 2 (change and rebuild your Wasms).
 
 ### 4. Package your DNAs into a happ file
 
 _hApps_ (holochain apps) are bundled as aggregations of different DNAs.
 
-1. Create a new happ workdir with `hc app init <HAPP_FOLDER>`.
-
-- This will create a `happ.yaml` in it with the necessary initial configuration.
-
+1. Create a new happ workdir with `hc app init <HAPP_FOLDER>`. This will create a `happ.yaml` in it with the necessary initial configuration.
 2. Add the DNA bundle created in the previous step to the new `happ.yaml` file (see [workdir/happ/happ.yaml](workdir/happ/happ.yaml) for an example).
 3. Run the following command to package your DNAs into a happ bundle per your `happ.yaml`:
-
 ```bash
 hc app pack workdir/happ
 ```
 
 This will produce a `demo-happ.happ` file as a child file in the `workdir/happ` directory.
+> You will have to rerun steo 4.3 (hc app pack) of this step any time you redo primary step 3 (change and rebuild your Dna).
 
-### 4. Testing
+### 5. Testing
 
 To run the tryorama tests, execute this commands:
 
@@ -103,9 +105,11 @@ FIXME: ignoring onLeave
 
 You can look at [tests/src/index.ts](tests/src/index.ts) and have a look at the tests. You can also look at the [tryorama documentation](https://github.com/holochain/tryorama).
 
-### 5. Running your happ
+> If you make edits to your Zomes (step 1), you will need to perform steps 2 and 3 again in order for the changes to be reflected in the running of your tests, since it looks at the packed DNA file.
 
-To run the happ bundle directly, execute this command replacing `workdir/happ` for the directory in which you have you `*.happ` file:
+### 6. Running your happ
+
+To run the happ bundle directly, execute this command replacing `workdir/happ` for the directory in which you have your `*.happ` file:
 
 ```bash
 hc sandbox generate workdir/happ --run=8888
@@ -126,7 +130,11 @@ hc-sandbox: App port attached at 8888
 hc-sandbox: Connected successfully to a running holochain
 ```
 
-Now you'll have holochain waiting with an [AppInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/app_interface.rs#L5-L130) for a connection at port 8888. You can connect to it with a [UI](https://github.com/holochain/holochain-conductor-api) or [any other process](https://github.com/holochain/conductor-client-rust). You also have holochain waiting with an [AdminInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/admin_interface.rs#L8-L386) on port (subject to vary) 45843 as mentioned in the logs.
+Now you'll have holochain waiting with an [AppInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/app_interface.rs#L5-L130) for a connection at port 8888. You also have holochain waiting with an [AdminInterface](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/holochain_conductor_api/src/admin_interface.rs#L8-L386) on port (subject to vary) 45843 as mentioned in the logs.
+
+Now that you're here, you can connect to the app interface from a client and call your Zome functions! How to do so is covered elsewhere, including a companion tutorial specifically compatible with this repository called ["How to call your hApp"](https://github.com/holochain/happ-client-call-tutorial). There are libraries for helping from different languages, such as [javascript](https://github.com/holochain/holochain-conductor-api) and [Rust](https://github.com/holochain/conductor-client-rust), but it is entirely possible from other languages with Websockets functionality, if you follow the protocol.
+
+> If you have rerun step 4 (rebuilt your hApp) and you are prepared to lose any data in your sandbox, stop the process and run `hc sandbox clean`, then rerun the step 6 command to have a fresh sandbox with your updated hApp.
 
 You can look at the [documentation of `hc sandbox`](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/hc_sandbox/README.md) to learn more on how to manage sandboxes. For a quick helper: in case you shut down your running conductor, you can start it again using `hc sandbox run`.
 
