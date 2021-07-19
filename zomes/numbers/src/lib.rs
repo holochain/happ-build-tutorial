@@ -12,7 +12,7 @@ pub struct ZomeOutput {
 }
 
 #[hdk_extern]
-pub fn foo(input: ZomeInput) -> ExternResult<ZomeOutput> {
+pub fn add_ten(input: ZomeInput) -> ExternResult<ZomeOutput> {
     Ok(ZomeOutput {
       other_number: input.number + 10
     })
