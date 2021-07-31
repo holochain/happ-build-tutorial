@@ -33,7 +33,7 @@ Welcome to this project here to help you build and run your first hApp! It cover
 
 ### 1. Write your Zomes
 
-Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/numbers](zomes/numbers) for examples.
+Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/numbers](zomes/numbers) for examples. For a more complete list of examples of a wide spectrum of functionality of Holochain and the HDK, check out [this folder of examples from Holochain](https://github.com/holochain/holochain/tree/hdk-v0.0.100/crates/test_utils/wasm/wasm_workspace).
 
 ### 2. Build your Zomes into WebAssembly (WASM)
 
@@ -146,6 +146,7 @@ Here you have useful documentation for holochain core utilities:
 
 - [Core Concepts](https://developer.holochain.org/docs/concepts/)
 - [HDK documentation](https://docs.rs/hdk/0.0.100/hdk/)
+- [HDK usage examples](https://github.com/holochain/holochain/tree/hdk-v0.0.100/crates/test_utils/wasm/wasm_workspace)
 - [Tryorama documentation](https://github.com/holochain/tryorama)
 - [Conductor API](https://github.com/holochain/holochain-conductor-api)
 
