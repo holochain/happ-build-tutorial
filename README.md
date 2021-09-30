@@ -28,7 +28,14 @@ Welcome to this project here to help you build and run your first hApp! It cover
 
 > Note that you don't need to do the `nix-shell https://holochain.love` step, since in this repository we provide an example `default.nix` file that provides the appropriate versions for the binaries that you will need.
 
-2. Enter the nix-shell for this repository by running `nix-shell .` in this folder. This will take a long time in the first run.
+2. Activate the holochain cachix with:
+
+```bash
+nix-env -iA cachix -f https://cachix.org/api/v1/install
+cachix use holochain-ci
+```
+
+3. Enter the nix-shell for this repository by running `nix-shell .` in this folder. This will take a long time in the first run.
    - Verify everything is working fine with `holochain -V` and `hc -V`.
 
 ### 1. Write your Zomes

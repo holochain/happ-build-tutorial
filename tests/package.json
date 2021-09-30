@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@holochain/tryorama": "0.4.3",
+    "@holochain/tryorama": "0.4.5",
     "@msgpack/msgpack": "^2.3.0",
     "@types/lodash": "^4.14.158",
     "@types/node": "^14.0.14",
