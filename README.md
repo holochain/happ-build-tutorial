@@ -9,7 +9,7 @@ _This README last updated: 2021-07-18_
 
 > Holochain revision: [363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7 May 21, 2021](https://github.com/holochain/holochain/commits/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7)
 
-> HDK version: [0.0.100](https://docs.rs/hdk/0.0.100/hdk/)
+> HDK version: [0.0.112](https://docs.rs/hdk/0.0.112/hdk/)
 
 > This project has a complementary guide at the ["call your hApp tutorial"](https://github.com/holochain/happ-client-call-tutorial), and interacts with that code via a clean separation at the "network layer". This project is called by that project over a Websocket based network connection.
 
@@ -18,7 +18,7 @@ Welcome to this project here to help you build and run your first hApp! It cover
 ## Important documentation
 
 - [HC CLI docs](https://github.com/holochain/holochain/blob/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7/crates/hc/README.md)
-- [HDK docs](https://docs.rs/hdk/0.0.100/hdk/)
+- [HDK docs](https://docs.rs/hdk/0.0.112/hdk/)
 
 ## Steps
 
@@ -40,7 +40,7 @@ cachix use holochain-ci
 
 ### 1. Write your Zomes
 
-Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/numbers](zomes/numbers) for examples. For a more complete list of examples of a wide spectrum of functionality of Holochain and the HDK, check out [this folder of examples from Holochain](https://github.com/holochain/holochain/tree/hdk-v0.0.100/crates/test_utils/wasm/wasm_workspace).
+Each zome is a Rust crate. See [zomes/whoami](zomes/whoami) and [zomes/numbers](zomes/numbers) for examples. For a more complete list of examples of a wide spectrum of functionality of Holochain and the HDK, check out [this folder of examples from Holochain](https://github.com/holochain/holochain/tree/hdk-0.0.112/crates/test_utils/wasm/wasm_workspace).
 
 ### 2. Build your Zomes into WebAssembly (WASM)
 
@@ -152,8 +152,8 @@ You can look at the [documentation of `hc sandbox`](https://github.com/holochain
 Here you have useful documentation for holochain core utilities:
 
 - [Core Concepts](https://developer.holochain.org/docs/concepts/)
-- [HDK documentation](https://docs.rs/hdk/0.0.100/hdk/)
-- [HDK usage examples](https://github.com/holochain/holochain/tree/hdk-v0.0.100/crates/test_utils/wasm/wasm_workspace)
+- [HDK documentation](https://docs.rs/hdk/0.0.112/hdk/)
+- [HDK usage examples](https://github.com/holochain/holochain/tree/hdk-0.0.112/crates/test_utils/wasm/wasm_workspace)
 - [Tryorama documentation](https://github.com/holochain/tryorama)
 - [Conductor API](https://github.com/holochain/holochain-conductor-api)
 
