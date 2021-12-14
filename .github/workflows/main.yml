@@ -21,20 +21,7 @@ jobs:
       - name: Cache nix with Cachix
         uses: cachix/cachix-action@v10
         with:
-          # this reads from the cache at https://holochain.cachix.org
-          # you can set up your own free cache via https://cachix.org
-          name: holochain
-          # if an auth token is set up, nix will be cached to your cachix cache
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-
-      # - name: Inspect nix.conf
-      #   run: cat ~/.config/nix/nix.conf
-
-      - name: Prepare Nix environment
-        run: |
-          nix-env -iA cachix -f https://cachix.org/api/v1/install
-          cachix use holochain-ci
-          nix-shell --command "echo Completed"
+          name: holochain-ci
 
       - run: nix-shell --pure --run 'CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown'
       - run: nix-shell --pure --run 'hc dna pack workdir/dna'
