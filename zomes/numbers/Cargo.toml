@@ -9,5 +9,5 @@ name = "numbers"
 crate-type = [ "cdylib", "rlib" ]
 
 [dependencies]
-hdk = "0.0.112"
+hdk = "0.0.116"
 serde = "1"
