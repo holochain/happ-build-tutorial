@@ -82,7 +82,7 @@ This will produce a `demo-happ.happ` file as a child file in the `workdir/happ` 
 
 ### 5. Testing
 
-To run the tryorama tests, execute this commands:
+To run the tryorama tests, make sure you have built the `.happ` file as specified in the steps above and then execute these commands:
 
 ```bash
 cd tests
@@ -175,7 +175,7 @@ Holochain is an open source project. We welcome all sorts of participation and a
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-Copyright (C) 2019-2020, Holochain Foundation
+Copyright (C) 2019-2021, Holochain Foundation
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
