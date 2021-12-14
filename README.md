@@ -8,7 +8,6 @@
 _This README last updated: 2021-12-14_
 
 > Holochain revision: [0.0.119 December 8, 2021](https://github.com/holochain/holochain/releases/tag/holochain-0.0.119)
-
 > HDK version: [0.0.116](https://docs.rs/hdk/0.0.116/hdk/)
 
 > This project has a complementary guide at the ["call your hApp tutorial"](https://github.com/holochain/happ-client-call-tutorial), and interacts with that code via a clean separation at the "network layer". This project is called by that project over a Websocket based network connection. The versions of holochain used may or may not be up-to-date and match this tutorial, so we recommend double checking that and not attempting to utilize it if it is different.
