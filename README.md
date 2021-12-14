@@ -35,8 +35,19 @@ nix-env -iA cachix -f https://cachix.org/api/v1/install
 cachix use holochain-ci
 ```
 
-3. Enter the nix-shell for this repository by running `nix-shell .` in this folder. This will take a long time in the first run.
-   - Verify everything is working fine with `holochain -V` and `hc -V`.
+3. Enter the nix-shell for this repository by running `nix-shell .` in this folder. This may take a while the first time you run it.
+   - Verify everything is working fine by typing the command `hn-introspect`  which should give you output showing the version of the holochain tools installed:
+```
+$ hn-introspect 
+List of applications and their version information
+
+v0_0_119
+- hc-0.0.20: https://github.com/holochain/holochain/tree/holochain-0.0.119
+- holochain-0.0.119: https://github.com/holochain/holochain/tree/holochain-0.0.119
+- kitsune-p2p-proxy-0.0.15: https://github.com/holochain/holochain/tree/holochain-0.0.119
+- lair-keystore-0.0.9: https://github.com/holochain/lair/tree/v0.0.9
+...
+```
 
 ### 1. Write your Zomes
 
