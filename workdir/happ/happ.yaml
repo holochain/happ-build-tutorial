@@ -2,8 +2,8 @@
 manifest_version: "1"
 name: demo-happ
 description: ~
-slots:
-  - id: sample-slot
+roles:
+  - id: sample-role
     provisioning:
       strategy: create
       deferred: false

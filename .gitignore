@@ -2,3 +2,5 @@ Cargo.lock
 target/
 .cargo/
 .hc
+workdir/dna/demo-dna.dna
+workdir/happ/demo-happ.happ

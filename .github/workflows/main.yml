@@ -11,8 +11,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up nix
-        uses: cachix/install-nix-action@v13
+        uses: cachix/install-nix-action@v16
         with:
+          nix_path: nixpkgs=channel:nixos-21.05
           extra_nix_config: |
             substituters = https://cache.nixos.org/ https://cache.holo.host/
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= cache.holo.host-1:lNXIXtJgS9Iuw4Cu6X0HINLu9sTfcjEntnrgwMQIMcE= cache.holo.host-2:ZJCkX3AUYZ8soxTLfTb60g+F3MkWD7hkH9y8CgqwhDQ=
@@ -20,20 +21,7 @@ jobs:
       - name: Cache nix with Cachix
         uses: cachix/cachix-action@v10
         with:
-          # this reads from the cache at https://holochain.cachix.org
-          # you can set up your own free cache via https://cachix.org
-          name: holochain
-          # if an auth token is set up, nix will be cached to your cachix cache
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-
-      # - name: Inspect nix.conf
-      #   run: cat ~/.config/nix/nix.conf
-
-      - name: Prepare Nix environment
-        run: |
-          nix-env -iA cachix -f https://cachix.org/api/v1/install
-          cachix use holochain-ci
-          nix-shell --command "echo Completed"
+          name: holochain-ci
 
       - run: nix-shell --pure --run 'CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown'
       - run: nix-shell --pure --run 'hc dna pack workdir/dna'

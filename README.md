@@ -5,13 +5,12 @@
 [![Chat](https://img.shields.io/badge/chat-chat%2eholochain%2enet-blue.svg?style=flat-square)](https://chat.holochain.org)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-_This README last updated: 2021-07-18_
+_This README last updated: 2021-12-14_
 
-> Holochain revision: [363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7 May 21, 2021](https://github.com/holochain/holochain/commits/363af6d8af8d18e4616f6aa56ad4d1f0fabaafb7)
+> Holochain revision: [0.0.119 December 8, 2021](https://github.com/holochain/holochain/releases/tag/holochain-0.0.119)
+> HDK version: [0.0.116](https://docs.rs/hdk/0.0.116/hdk/)
 
-> HDK version: [0.0.112](https://docs.rs/hdk/0.0.112/hdk/)
-
-> This project has a complementary guide at the ["call your hApp tutorial"](https://github.com/holochain/happ-client-call-tutorial), and interacts with that code via a clean separation at the "network layer". This project is called by that project over a Websocket based network connection.
+> This project has a complementary guide at the ["call your hApp tutorial"](https://github.com/holochain/happ-client-call-tutorial), and interacts with that code via a clean separation at the "network layer". This project is called by that project over a Websocket based network connection. The versions of holochain used may or may not be up-to-date and match this tutorial, so we recommend double checking that and not attempting to utilize it if it is different.
 
 Welcome to this project here to help you build and run your first hApp! It covers the very basics only. If you haven't previously read the article on ["Application Architecture" on the developer documentation](https://developer.holochain.org/concepts/2_application_architecture/) it could be helpful to do so now, or at any point during this tutorial.
 
@@ -35,8 +34,19 @@ nix-env -iA cachix -f https://cachix.org/api/v1/install
 cachix use holochain-ci
 ```
 
-3. Enter the nix-shell for this repository by running `nix-shell .` in this folder. This will take a long time in the first run.
-   - Verify everything is working fine with `holochain -V` and `hc -V`.
+3. Enter the nix-shell for this repository by running `nix-shell .` in this folder. This may take a while the first time you run it.
+   - Verify everything is working fine by typing the command `hn-introspect`  which should give you output showing the version of the holochain tools installed:
+```
+$ hn-introspect 
+List of applications and their version information
+
+v0_0_119
+- hc-0.0.20: https://github.com/holochain/holochain/tree/holochain-0.0.119
+- holochain-0.0.119: https://github.com/holochain/holochain/tree/holochain-0.0.119
+- kitsune-p2p-proxy-0.0.15: https://github.com/holochain/holochain/tree/holochain-0.0.119
+- lair-keystore-0.0.9: https://github.com/holochain/lair/tree/v0.0.9
+...
+```
 
 ### 1. Write your Zomes
 
@@ -82,7 +92,7 @@ This will produce a `demo-happ.happ` file as a child file in the `workdir/happ` 
 
 ### 5. Testing
 
-To run the tryorama tests, execute this commands:
+To run the tryorama tests, make sure you have built the `.happ` file as specified in the steps above and then execute these commands:
 
 ```bash
 cd tests
@@ -175,7 +185,7 @@ Holochain is an open source project. We welcome all sorts of participation and a
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-Copyright (C) 2019-2020, Holochain Foundation
+Copyright (C) 2019-2021, Holochain Foundation
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
