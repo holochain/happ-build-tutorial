@@ -1,6 +1,6 @@
 # Note: this tutorial has been deprecated.
 
-As of 9/2022 a better way to build your first app is to use the [scaffolding generator](https://www.npmjs.com/package/@holochain/create).
+As of 9/2022 a better way to build your first app is to use the [scaffolding generator](https://developer.holochain.org/install/#scaffold-your-first-holochain-app).
 
 # How to build a hApp (Holochain App): The Basics
 
